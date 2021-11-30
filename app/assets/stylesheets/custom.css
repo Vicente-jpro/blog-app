@@ -1,0 +1,25 @@
+.text-white{
+	color: white !important;
+}
+
+.text-white:hover{
+	color: #880e4f !important;
+}
+
+body{
+	background-color: #fce4ec;
+}
+
+/*/The same color nave bar /*/
+h1{
+	color: #e57373 !important
+}
+
+h2{
+	color: #e57373 !important
+
+}
+
+::placeholder {
+  color: #e57373 !important;
+}

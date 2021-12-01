@@ -21,7 +21,13 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
+     #debugger
     @article = Article.new(article_params)
+    
+    if @article.user.nil?
+       @article.user = User.first
+       puts @article.user
+    end
 
     respond_to do |format|
       if @article.save

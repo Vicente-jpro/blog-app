@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+
+<div class="alert red lighten-3" role="alert">
+  <p>
+  <h2>Title:</h2>
   <%= @article.title %>
 </p>
 
@@ -10,5 +12,11 @@
   <%= @article.description %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<p>  
+
+  <%= link_to 'Edit', edit_article_path(@article),  class:"btn btn-info" %> 
+  <%= link_to 'Back to the articles', articles_path,  class:"btn btn-warning"%>
+</p>
+</div>
+
+

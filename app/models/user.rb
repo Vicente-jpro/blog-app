@@ -1,14 +1,6 @@
 class User < ApplicationRecord
-	
-	has_many :articles
-	before_save { self.email = email.downcase }
-
-	validates :name, presence: true, length:{ minimum: 3, maximum:25 }
-	validates :email, presence: true, 
-	
-			  uniqueness: { 
-			  	scope: :name, 
-			  	message: "Este email já exite"
-			  } 
-
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 end

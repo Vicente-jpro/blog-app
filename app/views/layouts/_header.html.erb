@@ -1,18 +1,36 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light red lighten-2 ">
         <div class="container-fluid">
-          <%= link_to 'BlogApp', homes_path, class:"navbar-brand text-white"%>
+          <%= link_to 'BlogApp', root_path, class:"navbar-brand text-white"%>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <% if user_signed_in? %>
               <li class="nav-item">
                 <%= link_to 'Create Post', new_article_path, class:"nav-link text-white"%>
               </li>
               <li class="nav-item">
                 <%= link_to 'View Posts', articles_path, class:"nav-link text-white"%>
               </li>
+              <li class="nav-item">
+                <%= link_to 'Edit Profile', edit_user_registration_path, class:"nav-link text-white"%>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"nav-link text-white"%>
+              </li>
+              <% else %>
+              <li class="nav-item">
+                <%= link_to 'Sign Up', new_user_registration_path, class:"nav-link text-white" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Sign In', new_user_session_path, class:"nav-link text-white"%>
+              </li>
+              <% end %>
+            
+
+              
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

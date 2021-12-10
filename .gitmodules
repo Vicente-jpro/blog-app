@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/gravatar_image_tag"]
+	path = vendor/plugins/gravatar_image_tag
+	url = git://github.com/mdeering/gravatar_image_tag.git

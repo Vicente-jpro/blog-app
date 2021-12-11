@@ -42,13 +42,20 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
-    respond_to do |format|
-      if @article.update(article_params)
-        format.html { redirect_to @article, notice: "Article was successfully updated." }
-        format.json { render :show, status: :ok, location: @article }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+    if permition_user_modify_post
+      respond_to do |format|
+        if @article.update(article_params)
+          format.html { redirect_to @article, notice: "Article was successfully updated." }
+          format.json { render :show, status: :ok, location: @article }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @article.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to articles_url, notice: "This article belongs to another person. It's impossible delete or update" }
+        format.json { head :no_content }
       end
     end
   end
@@ -80,17 +87,12 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(:title, :description)
     end
 
-    def permit_user_modify_post
+    def permition_user_modify_post
 
       @article = set_article
-    
       logger.info("current_user "+current_user.id.to_s+" - "+@article.user.id.to_s)
+      true if current_user.id == @article.user.id 
 
-      if current_user.id == @article.user.id 
-        true
-      else
-        false
-      end
     end
 
 end

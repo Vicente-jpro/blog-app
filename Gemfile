@@ -32,7 +32,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise', '~> 4.8'
 gem 'gravatar_image_tag'
-
+gem 'will_paginate', '~> 3.3'
+gem 'bootstrap-will_paginate', '~> 1.0'
 
 
 group :development, :test do

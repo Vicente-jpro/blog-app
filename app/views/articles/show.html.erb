@@ -2,6 +2,9 @@
 
 
 <div class="alert red lighten-3" role="alert">
+  <% if @article.user%>
+    <%= gravatar_image(@article.user.email)%>
+  <% end %>
   <p>
   <h2>Title:</h2>
   <%= @article.title %>
@@ -18,5 +21,6 @@
   <%= link_to 'Back to the articles', articles_path,  class:"btn btn-warning"%>
 </p>
 </div>
+
 
 

@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   
-  before_action :set_article, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_article, only: %i[ show edit update destroy ]
+  
 
   # GET /articles or /articles.json
   def index
@@ -23,14 +23,12 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-     #debugger
-    @article = Article.new(article_params)
     
-    if @article.user.nil?
-       @article.user = User.first
-       puts @article.user
-    end
-
+    @article = Article.new(article_params)
+    @article.user = current_user
+    
+    #logger.debug "New article debug: #{current_user.id} \n #{@article.attributes.inspect}"
+    
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: "Article was successfully created." }

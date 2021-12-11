@@ -1,3 +1,7 @@
+<div class="pagination justify-content-center">
+    <%= will_paginate(objectArticles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm') %>
+</div>
+
     <% objectArticles.each do |article| %>
     <div class="my-5">
       <div class="card my-5">
@@ -30,3 +34,7 @@
  <% end %>
 
 <%= link_to 'New Article', new_article_path , class:"btn btn-warning"%>
+
+<div class="pagination justify-content-center">
+    <%= will_paginate(objectArticles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm') %>
+</div>

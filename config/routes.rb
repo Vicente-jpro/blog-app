@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   get '/userarticle/:id', to: 'userarticle#show', as: 'userarticle'
 
   devise_for :users

@@ -1,8 +1,9 @@
 class Category < ApplicationRecord
-	validates :name, presence: true, uniqueness:true, length:{ minimum: 3, maximum: 30 }
-	has_many :article_categories
-	has_many :articles, through: :article_categories
 
+	has_and_belongs_to_many :articles
+
+	validates :name, presence: true, uniqueness:true, length:{ minimum: 3, maximum: 30 }
+	
 	def name_with_initial
 	  "#{name}"
 	end

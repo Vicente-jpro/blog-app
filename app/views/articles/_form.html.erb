@@ -24,6 +24,12 @@
     <%= form.text_area  :description, placeholder:"Your article desciption", size: "70x5" , class:"form-control" %>
   </div>
 
+  <div class="field form-check form-check-inline mr-1">
+
+    <%= collection_check_boxes(:articles, :category_ids, Category.all, :id, :name_with_initial, class:" form-check-label mr-1") %>
+  </div>
+
+
   <div class="actions form-group my-2">
     <%= form.submit class:"btn btn-success" %>
     <%= link_to 'Back to the articles', articles_path,  class:"btn btn-warning"%>

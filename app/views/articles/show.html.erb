@@ -14,7 +14,11 @@
   <strong>Description:</strong>
   <%= @article.description %>
 </p>
-
+<p>
+  <% if @article.categories.any? %>
+    <%= render @article.categories %>
+  <% end %>
+</p>
 <p>  
 
   <%= link_to 'Edit', edit_article_path(@article),  class:"btn btn-info" %> 

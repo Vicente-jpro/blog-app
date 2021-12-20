@@ -23,10 +23,12 @@
   <div class="field form-group my-2">
     <%= form.text_area  :description, placeholder:"Your article desciption", size: "70x5" , class:"form-control" %>
   </div>
-
-  <div class="field form-check form-check-inline mr-1">
-
-    <%= collection_check_boxes(:articles, :category_ids, Category.all, :id, :name_with_initial, class:" form-check-label mr-1") %>
+  
+  <br>
+  <div class="field form-check form-check-inline ">
+    <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+      <% cb.label(class:'form-check-label ') {cb.check_box(class:'form-check-input ') + cb.text } %>
+    <% end %>  
   </div>
 
 

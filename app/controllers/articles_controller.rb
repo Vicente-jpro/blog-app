@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @categories = @article.categories.new
   end
 
   # GET /articles/1/edit
@@ -26,8 +27,6 @@ class ArticlesController < ApplicationController
     
     @article = Article.new(article_params)
     @article.user = current_user
-    
-    #logger.debug "New article debug: #{current_user.id} \n #{@article.attributes.inspect}"
     
     respond_to do |format|
       if @article.save
@@ -84,7 +83,7 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :description)
+      params.require(:article).permit(:title, :description, category_ids: [])
     end
 
     def permition_user_modify_post

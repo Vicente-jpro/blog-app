@@ -14,6 +14,10 @@
           <p><small> <strong>Created by:</strong>  <%= article.user.email %> , <%= time_ago_in_words( article.created_at )%> ago</small></p>
 
           <% end %>
+
+          <% if article.categories.any? %>
+            <%= article.categories.name %>
+          <% end %>
         <p>
            <!--Show-->
            <%= link_to 'Show', article, class:"btn btn-outline-success bi-eye-fill" %>

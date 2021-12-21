@@ -25,7 +25,7 @@ After install Ruby on Rails, clone this app, go inside to directory `/blog-app` 
  
 ## 4 - Explaing theirs associations
 
-An `Article` can have many `Categories`, and it result, `ArticlesCategories`.
+An `Article` can have many `Categories`, and it result, `ArticlesCategories`. <br/>
 An `Article` can have one `User`.
 
 

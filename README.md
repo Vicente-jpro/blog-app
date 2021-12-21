@@ -15,12 +15,5 @@ Things you may want to cover:
  Database SQLite3:
 <pre>3.31.1 2020-01-27 19:55:54</pre>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## How can you run this application ?
+A: You can run this aplication by folowing instuction on official web site [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html)

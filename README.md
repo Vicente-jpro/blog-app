@@ -17,4 +17,4 @@ Things you may want to cover:
 
 ## How can you run this application ?
 A: You can run this application by folowing instuction on official web site [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html).
-After install Ruby on Rails, clone this app and run the command into your terminal `rails server` then copy and past this address to your Browser URL `127.0.0.1:3000`.
+After install Ruby on Rails, clone this app, go inside to directory `/blog-app` and run the command into your terminal `rails server` then copy and past this address to your Browser URL `127.0.0.1:3000`.

@@ -36,6 +36,7 @@ An `Article` can have many `Categories`, and it result, `ArticlesCategories`. <b
 	validates :title, presence: true, length:{ minimum: 3}
 	validates :description, presence:true, length: { minimum: 10, maximum:200 }
 end
+```
 
 ```ruby
 class Category < ApplicationRecord

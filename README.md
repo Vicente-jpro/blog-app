@@ -28,18 +28,27 @@ After install Ruby on Rails, clone this app, go inside to directory `/blog-app` 
 An `Article` can have many `Categories`, and it result, `ArticlesCategories`. <br/>
 ```ruby
  class Article < ApplicationRecord
-	
+
 	belongs_to :user
 	has_and_belongs_to_many :categories, join_table: 'articles_categories'
-	
+
 	validates :user_id, presence: true 
 	validates :title, presence: true, length:{ minimum: 3}
 	validates :description, presence:true, length: { minimum: 10, maximum:200 }
 end
-````
 
-```````````````````
+```ruby
+class Category < ApplicationRecord
 
+	has_and_belongs_to_many :articles, join_table: 'articles_categories'
+
+	validates :name, presence: true, uniqueness:true, length:{ minimum: 3, maximum: 30 }
+end
+```
+
+```ruby
+class ArticlesCategory < ApplicationRecord
+end
+`````````````
 An `Article` can have one `User`.
-
 

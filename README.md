@@ -41,6 +41,7 @@ An `Article` can have many `Categories`, and it result, `ArticlesCategories`. <b
 end
 ```
 
+
 ```ruby
 class Category < ApplicationRecord
 

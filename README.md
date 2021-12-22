@@ -1,6 +1,6 @@
 # BLOG APP
 
-This is a simple blog application that has been building using Ruby on Rails.
+This is a simple blog application that has been built using Ruby on Rails. 
 
 Things you may want to cover:
 
@@ -16,16 +16,17 @@ Things you may want to cover:
 <pre>3.31.1 2020-01-27 19:55:54</pre>
 
 ## 2 - How can you run this application ?
-A: You can run this application by folowing instuction on official web site [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html).
-After install Ruby on Rails, clone this app, go inside to directory `/blog-app` and run the command into your terminal `rails server` then copy and past this address to your Browser URL `127.0.0.1:3000`.
+A: You can run this application by following instructions on the official website [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html).
+After installing Ruby on Rails, clone this app, go inside to directory `/blog-app` and run the command into your terminal `rails server` then copy and paste this address to your Browser URL `127.0.0.1:3000`.
 
-## 3 - How is this app strutured?
-### 3.1 - What models does the application has?
+## 3 - How is this app structured?
+### 3.1 - What models does the application have?
  A: It has an `Article`, `Category`, `ArticlesCategories` and `Users` model. <br/>
     An `Article` can have many `Categories`, and it result, `ArticlesCategories`. <br/>
     An `User` can have many `Articles`. <br/>
- 
-## 4 - Explaing theirs associations
+    
+    
+ ## 4 - Explain theirs associations
 
 An `Article` can have many `Categories`, and it result, `ArticlesCategories`. <br/>
 ```ruby
@@ -52,8 +53,9 @@ end
 ```ruby
 class ArticlesCategory < ApplicationRecord
 end
-`
 ```
+
+
 An `User` can have many `Articles`. <br/>
 ```ruby
 class User < ApplicationRecord
@@ -67,6 +69,5 @@ class User < ApplicationRecord
 
 end
 ```
-````
-
-
+### Done by Vicente Simão <br/>
+### vicenteviciii@gmail.com

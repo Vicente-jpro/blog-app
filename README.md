@@ -21,7 +21,9 @@ After install Ruby on Rails, clone this app, go inside to directory `/blog-app` 
 
 ## 3 - How is this app strutured?
 ### 3.1 - What models does the application has?
- A: It has an `Article`, `Category`, `ArticlesCategories` and `Users` model.
+ A: It has an `Article`, `Category`, `ArticlesCategories` and `Users` model. <br/>
+    An `Article` can have many `Categories`, and it result, `ArticlesCategories`. <br/>
+    An `User` can have many `Articles`. <br/>
  
 ## 4 - Explaing theirs associations
 

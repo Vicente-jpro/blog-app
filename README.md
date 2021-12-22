@@ -50,8 +50,9 @@ end
 ```ruby
 class ArticlesCategory < ApplicationRecord
 end
-```
-
+`
+``
+An `User` can have many `Articles`. <br/>
 ```ruby
 class User < ApplicationRecord
 
@@ -65,5 +66,5 @@ class User < ApplicationRecord
 end
 ```
 ````
-An `Article` can have one `User`.
+
 

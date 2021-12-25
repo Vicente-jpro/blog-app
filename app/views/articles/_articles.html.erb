@@ -2,6 +2,9 @@
     <%= will_paginate(objectArticles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm') %>
 </div>
 
+    <div class="d-grid gap-2">
+      <%= link_to 'New Article', new_article_path , class:"btn btn-warning"%>
+    </div>
     <% objectArticles.each do |article| %>
     <div class="my-5">
       <div class="card my-5">
@@ -22,9 +25,6 @@
            <!--Show-->
            <%= link_to 'Show', article, class:"btn btn-outline-success bi-eye-fill" %>
             <% if current_user %>
-            <!--Edit-->
-           <%= link_to 'Edit', edit_article_path(article), class:"btn btn-outline-warning bi-pencil-square" %>
-            
             <!--Destroy-->
            <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger bi-trash-fill" %>
            <% end %>
@@ -35,9 +35,9 @@
     
  
  <% end %>
-
-<%= link_to 'New Article', new_article_path , class:"btn btn-warning"%>
-
+<div class="d-grid gap-2">
+  <%= link_to 'New Article', new_article_path , class:"btn btn-warning"%>
+</div>
 <div class="pagination justify-content-center">
     <%= will_paginate(objectArticles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm') %>
 </div>

@@ -1,3 +1,5 @@
+
+/************* Text and Titles ****************/
 .text-white{
 	color: white !important;
 }
@@ -6,12 +8,7 @@
 	color: #880e4f !important;
 }
 
-.menu-color{
-	background-color: #e57373;
-}
-body{
-	background-color: #fce4ec;
-}
+
 
 /*/The same color nave bar /*/
 h1{
@@ -27,6 +24,15 @@ h3{
 	color: #e57373 !important
 
 }
+/************* end ******************************/
+
+.menu-color{
+	background-color: #e57373;
+}
+body{
+	background-color: #fce4ec;
+}
+
 
 ::placeholder {
   color: #e57373 !important;

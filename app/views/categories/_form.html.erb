@@ -1,22 +1,32 @@
-<%= form_with(model: category) do |form| %>
-  <% if category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+<main class="container col-lg-9 text-center">
+    
+  <%= form_with(model: category) do |form| %>
+    <% if category.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger text-center">
+        
+        <h3><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h3>
+        
+          <ul>
+            <% category.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>  
+        </div>
+      
+      </div>
+    <% end %>
+  <div class="container col-lg-4">
 
-      <ul>
-        <% category.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+     <div class="d-grid gap-2 form-group">
+      <%= form.text_field :name , placeholder: "Category name", class: "form-control"%>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="d-grid gap-2 my-2">
+      <%= form.submit class: "btn btn-info" %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>
+</main>
+

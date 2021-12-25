@@ -1,11 +1,24 @@
-<h1>Categories</h1>
+<h1 class="text-center">Categories</h1>
 
-
+  <main class="container col-lg-2">
+    
+  <div class="d-grid gap-2">
+    <%= link_to 'New Category', new_category_path, class:"btn btn-info"%>
+  </div>  <br>
     <% @categories.each do |category| %>
+    <div class="card text-center">
+      <div class="card-body">
 
-        <%= link_to ''+category.name, category %>
-        <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      
+        <h3> <%= link_to ''+category.name, category,  class:"btn btn-light" %></h3>
+        <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %></td>
+      </div>
+    </div>
+    <br>
     <% end %>
+  <div class="d-grid gap-2">
+    <%= link_to 'New Category', new_category_path, class:"btn btn-info"%>
+  </div>  
+  </main>
 
-<%= link_to 'New Category', new_category_path %>
+
+

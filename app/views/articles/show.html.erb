@@ -15,6 +15,16 @@
   <%= @article.description %>
 </p>
 <p>
+  <strong>Comments</strong>
+  <div id="comments">
+    
+  <%= render "articles/comments", article: @article %>
+  <%= render "comments/new", article: @article%>
+  </div>
+</p>
+
+ 
+<p>
   <% if @article.categories.any? %>
     <%= render @article.categories %>
   <% end %>

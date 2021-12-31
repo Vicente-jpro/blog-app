@@ -9,19 +9,19 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
               <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to 'Create Post', new_article_path, class:"nav-link text-white"%>
+                <%= link_to 'Create Article', new_article_path, class:"nav-link text-white"%>
               </li>
               <li class="nav-item">
-                <%= link_to 'View Posts', articles_path, class:"nav-link text-white"%>
+                <%= link_to 'Articles', articles_path, class:"nav-link text-white"%>
               </li>
               <li class="nav-item">
-                <%= link_to 'View Categories', categories_path, class:"nav-link text-white" %>
+                <%= link_to 'Categories', categories_path, class:"nav-link text-white" %>
               </li>
               <li class="nav-item">
-                <%= link_to 'Edit Profile', edit_user_registration_path, class:"nav-link text-white"%>
+                <%= link_to 'Profile', edit_user_registration_path, class:"nav-link text-white"%>
               </li>
                <li class="nav-item">
-                <%= link_to 'My posts', userarticle_path(current_user.id), class:"nav-link text-white"%>
+                <%= link_to 'My Articles', userarticle_path(current_user.id), class:"nav-link text-white"%>
               </li>
               <li class="nav-item">
                 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"nav-link text-white"%>

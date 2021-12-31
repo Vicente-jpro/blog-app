@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :categories
   get '/userarticle/:id', to: 'userarticle#show', as: 'userarticle'
 

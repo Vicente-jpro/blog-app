@@ -21,7 +21,10 @@
           <% if article.categories.any? %>
             <%= render article.categories %>
           <% end %>
-        <p>
+          
+         <%number_comments = pluralize article.comments.count, "comment"%>
+        <p><small><strong><%= link_to ''+number_comments.to_s, article %></strong></small></p>
+
            <!--Show-->
            <%= link_to 'Show', article, class:"btn btn-outline-success bi-eye-fill" %>
             <% if current_user %>

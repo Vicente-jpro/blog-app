@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
  	before_action :set_article_id 
 
  	def edit
- 		@comment = Comment.find(params[:id])
+ 		@comment = Comment.find(params[:article_id])
  	end
 
  	def create

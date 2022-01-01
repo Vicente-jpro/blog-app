@@ -1,3 +1,9 @@
 <h3> Edit your comment </h3>
 
-<%= render "new", article: @article %>
+<%= form_with model: [ @article, @comment]  do |form| %>
+	Your comment <br>
+	<p>	
+		<%= form.text_area :description, size: "20x2"%> 
+	</p>
+	<%= form.submit %>
+<% end %>

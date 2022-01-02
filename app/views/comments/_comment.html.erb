@@ -2,7 +2,11 @@
 <div id="dom_id(comments)">
 	<%= comment.description %>
 	<p>
-		<%= link_to "edit", edit_article_comment_path(comment) %>
+	   <% @comment = comment%>
+	   <%= link_to "edit", edit_article_comment_path(comment) %>
+	    <%= link_to 'Destruir comentário', [comment.article, comment],
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
 	</p>
 	
 </div>

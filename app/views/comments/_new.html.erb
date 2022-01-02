@@ -1,0 +1,9 @@
+
+
+<%= form_with model: [ article, Comment.new ]  do |form| %>
+	Your comment <br>
+	<p>	
+		<%= form.text_area :description, size: "20x2"%> 
+	</p>
+	<%= form.submit %>
+<% end %>

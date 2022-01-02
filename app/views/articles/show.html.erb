@@ -5,15 +5,24 @@
   <% if @article.user%>
     <%= gravatar_image(@article.user.email)%>
   <% end %>
-  <p>
-  <h2>Title:</h2>
-  <%= @article.title %>
+<p>
+  <h3>Title: <%= @article.title %> </h3>
 </p>
 
 <p>
   <strong>Description:</strong>
   <%= @article.description %>
 </p>
+
+<p>
+  <strong>Comments</strong>
+  <div id="comments">
+  <%= render "articles/comments", article: @article %>
+  <%= render "comments/new", article: @article%>
+  </div>
+</p>
+
+ 
 <p>
   <% if @article.categories.any? %>
     <%= render @article.categories %>

@@ -1,27 +1,39 @@
-<p id="notice"><%= notice %></p>
+
+<div class="my-5">
+    <div class="card my-5">
+      <div class="card-header menu-color text-white text-center"> <strong><%= @article.title %></strong></div>
+      <div class="card-body">
+
+        <% if @article.user %>  
+        <div class="d-flex justify-content-center">
+            <%= gravatar_image(@article.user.email) %>
+        </div>
+
+          <p class="text-center"> 
+            <small> 
+              <strong>Created by:</strong>  
+              <%= @article.user.email %> , <%= time_ago_in_words( @article.created_at )%> ago
+           </small>
+          </p>
+
+          <p class="card-text">
+            <h3>Description:</h3> <%= @article.description %>
+          </p>
 
 
-<div class="alert red lighten-3" role="alert">
-  <% if @article.user%>
-    <%= gravatar_image(@article.user.email)%>
-  <% end %>
-<p>
-  <h3>Title: <%= @article.title %> </h3>
-</p>
+        <% end %>
+    
 
-<p>
-  <strong>Description:</strong>
-  <%= @article.description %>
-</p>
-
-<p>
-  <strong>Comments</strong>
-  <div id="comments">
-  <%= render "articles/comments", article: @article %>
-  <%= render "comments/new", article: @article%>
+            <p>
+              <strong>Comments</strong>
+              <div id="comments">
+              <%= render "articles/comments", article: @article %>
+              <%= render "comments/new", article: @article%>
+              </div>
+            </p>
+    </div>
   </div>
-</p>
-
+</div>
  
 <p>
   <% if @article.categories.any? %>

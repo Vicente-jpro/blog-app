@@ -1,6 +1,7 @@
 
 <div id="dom_id(comments)">
-	<%= comment.description %>
+	<div class="alert pink lighten-5">
+		<%= comment.description %>
 	<p>
 	   <% @comment = comment%>
 	   <%= link_to "edit", edit_article_comment_path(comment) %>
@@ -8,5 +9,7 @@
               method: :delete,
               data: { confirm: "Are you sure?" } %>
 	</p>
+	</div>	
+
 	
 </div>

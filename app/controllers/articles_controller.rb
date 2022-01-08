@@ -28,14 +28,19 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = current_user
     
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to @article, notice: "Article was successfully created." }
-        format.json { render :show, status: :created, location: @article }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+    if @article.categories.any?
+      respond_to do |format|
+        if @article.save
+          format.html { redirect_to @article, notice: "Article was successfully created." }
+          format.json { render :show, status: :created, location: @article }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @article.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      flash[:notice_article_category] = "Select a category";
+      redirect_to new_article_path
     end
   end
 

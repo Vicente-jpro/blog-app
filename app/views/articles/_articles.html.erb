@@ -17,14 +17,17 @@
           <p><small> <strong>Created by:</strong>  <%= article.user.email %> , <%= time_ago_in_words( article.created_at )%> ago</small></p>
 
           <% end %>
-
-          <% if article.categories.any? %>
-            <%= render article.categories %>
-          <% end %>
+          <span class="badge rounded-pill bg-warning text-dark">
+            <% if article.categories.any? %>
+              <%= render article.categories %>
+            <% end %>
+          </span>
           
-         <%number_comments = pluralize article.comments.count, "comment"%>
-        <p><small><strong><%= link_to ''+number_comments.to_s, article %></strong></small></p>
 
+           <%number_comments = pluralize article.comments.count, "comment"%>
+          <p><small><strong><%= link_to ''+number_comments.to_s, article %></strong></small></p> 
+
+         
            <!--Show-->
            <%= link_to 'Show', article, class:"btn btn-outline-success bi-eye-fill" %>
             <% if current_user %>

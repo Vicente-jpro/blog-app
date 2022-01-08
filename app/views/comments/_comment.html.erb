@@ -1,12 +1,14 @@
 
 <div id="dom_id(comments)">
-	<%= comment.description %>
+	<div class="alert pink lighten-5">
+		<%= comment.description %>
 	<p>
 	   <% @comment = comment%>
 	   <%= link_to "edit", edit_article_comment_path(comment) %>
-	    <%= link_to 'Destruir comentário', [comment.article, comment],
+	    <%= link_to 'eliminar', [comment.article, comment],
               method: :delete,
               data: { confirm: "Are you sure?" } %>
 	</p>
-	
+	</div>	
+
 </div>

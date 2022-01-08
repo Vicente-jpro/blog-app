@@ -5,22 +5,20 @@
       <div class="card-body">
 
         <% if @article.user %>  
-        <div class="d-flex justify-content-center">
-            <%= gravatar_image(@article.user.email) %>
-        </div>
+          <div class="d-flex justify-content-center">
+              <%= gravatar_image(@article.user.email) %>
+          </div>
 
-          <p class="text-center"> 
-            <small> 
-              <strong>Created by:</strong>  
-              <%= @article.user.email %> , <%= time_ago_in_words( @article.created_at )%> ago
-           </small>
-          </p>
+            <p class="text-center"> 
+              <small> 
+                <strong>Created by:</strong>  
+                <%= @article.user.email %> , <%= time_ago_in_words( @article.created_at )%> ago
+             </small>
+            </p>
 
-          <p class="card-text">
-            <h3>Description:</h3> <%= @article.description %>
-          </p>
-
-
+            <p class="card-text">
+              <h3>Description:</h3> <%= @article.description %>
+            </p>
         <% end %>
     
 
@@ -35,11 +33,6 @@
   </div>
 </div>
  
-<p>
-  <% if @article.categories.any? %>
-    <%= render @article.categories %>
-  <% end %>
-</p>
 <p>  
 
   <%= link_to 'Edit', edit_article_path(@article),  class:"btn btn-info" %> 

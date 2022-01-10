@@ -16,7 +16,7 @@ Things you may want to cover:
 <pre>3.31.1 2020-01-27 19:55:54</pre>
 
 ## 2 - How can you run this application ?
-A: You can run this application on [https://vicente-blogger.herokuapp.com/](https://vicente-blogger.herokuapp.com/) website or by following instructions on the official website [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html).
+A: You can run this application in [https://vicente-blogger.herokuapp.com/](https://vicente-blogger.herokuapp.com/) website or by following instructions on the official website [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html).
 After installing Ruby on Rails, clone this app, go inside to directory `/blog-app` and run the command into your terminal `rails server` then copy and paste this address to your Browser URL `127.0.0.1:3000`.
 
 ## 3 - How is this app structured?

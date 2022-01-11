@@ -1,6 +1,6 @@
 <h3> Edit your comment </h3>
 
-<%= form_with model: [ @article, @comment]  do |form| %>
+<%= form_with model: [ @article, @comment.article]  do |form| %>
 	Your comment <br>
 	<p>	
 		<%= form.text_area :description, size: "20x2"%> 

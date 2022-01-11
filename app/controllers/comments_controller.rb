@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
- 	before_action :set_article_id 
+ 	before_action :set_article_id, only: %i[ update create]
 
  	def edit
  	 @comment = Comment.find(params[:article_id])
+ 	 render json: @comment
  	end
 
  	def create

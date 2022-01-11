@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
  	end
 
  	def update
- 	  @article.comments.create(set_params)
+ 	  @article.comments.update(set_params)
 	  redirect_to @article
  	end
 

@@ -52,3 +52,6 @@ label{
   padding: 15px;
   margin: auto;
 }
+.form-check-label{
+	padding-right: 15px;
+}

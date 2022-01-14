@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
- 	before_action :set_article_id, only: %i[update create]
+ 	before_action :set_article_id, only: %i[update create destroy]
  	before_action :set_comment, only: %i[update]
 
  	def edit
